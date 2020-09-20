@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    </link>
+    <!-- css stylesheet -->
+    <link href=style.css rel="stylesheet">
+</head>
+
+<body>
+    <!-- Jumbotron -->
+    <div class="jumbotron jumbotron-fluid">
+        <div class="main-container">
+            <h1 class="display-4">Weather Dashboard</h1>
+            <p class="lead"></p>
+        </div>
+    </div>
+    <!-- search div - form -->
+    <section id="search" class="search-container">
+        <div class="row">
+            <div class="col-sm-8">
+                <section>
+                    <div class="row">
+                        <div class="col-sm">
+                            <div class="card" style="width: 18rem;">
+                                <div class="card-body">
+                                    <h5 class="card-title">Forecast</h5>
+                                    <h6 class="card-subtitle mb-2 text-muted">Monday</h6>
+                                    <p class="card-text">Some quick example text to build on the card title and make
+                                        up the bulk of
+                                        the card's content.</p>
+                                    <a href="#" class="card-link">Card link</a>
+                                    <a href="#" class="card-link">Another link</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm">
+                            <div class="card" style="width: 18rem;">
+                                <div class="card-body">
+                                    <h5 class="card-title">Forecast</h5>
+                                    <h6 class="card-subtitle mb-2 text-muted">Tuesday</h6>
+                                    <p class="card-text">Some quick example text to build on the card title and make
+                                        up the bulk of
+                                        the card's content.</p>
+                                    <a href="#" class="card-link">Card link</a>
+                                    <a href="#" class="card-link">Another link</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm">
+                            <div class="card" style="width: 18rem;">
+                                <div class="card-body">
+                                    <h5 class="card-title">Forecast</h5>
+                                    <h6 class="card-subtitle mb-2 text-muted">Wednesday</h6>
+                                    <p class="card-text">Some quick example text to build on the card title and make
+                                        up the bulk of
+                                        the card's content.</p>
+                                    <a href="#" class="card-link">Card link</a>
+                                    <a href="#" class="card-link">Another link</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm">
+                            <div class="card" style="width: 18rem;">
+                                <div class="card-body">
+                                    <h5 class="card-title">Forecast</h5>
+                                    <h6 class="card-subtitle mb-2 text-muted">Thursday</h6>
+                                    <p class="card-text">Some quick example text to build on the card title and make
+                                        up the bulk of
+                                        the card's content.</p>
+                                    <a href="#" class="card-link">Card link</a>
+                                    <a href="#" class="card-link">Another link</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm">
+                            <div class="card" style="width: 18rem;">
+                                <div class="card-body">
+                                    <h5 class="card-title">Forecast</h5>
+                                    <h6 class="card-subtitle mb-2 text-muted">Friday</h6>
+                                    <p class="card-text">Some quick example text to build on the card title and make
+                                        up the bulk of
+                                        the card's content.</p>
+                                    <a href="#" class="card-link">Card link</a>
+                                    <a href="#" class="card-link">Another link</a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </section>
+            </div>
+
+            <!-- search bar -->
+            <div class="col-sm-4">
+                <section class="container-fluid">
+                    <div class="row">
+                        <div id="search" class="col">
+                            <h2>Search for a city: </h2>
+                            <form class="needs-validation" novalidate>
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label for="validationTooltip01">City</label>
+                                        <input type="text" class="form-control" id="validationTooltip01" required>
+                                        <div class="valid-tooltip">
+                                            Looks good!
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <label for="validationTooltip02">State</label>
+                                        <input type="text" class="form-control" id="validationTooltip02" required>
+                                        <div class="valid-tooltip">
+                                            Looks good!
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label for="validationTooltip03">Country</label>
+                                        <input type="text" class="form-control" id="validationTooltip03" required>
+                                        <div class="invalid-tooltip">
+                                            Please provide a valid city.
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <label for="validationTooltip05">Postal Code</label>
+                                        <input type="text" class="form-control" id="validationTooltip05" required>
+                                        <div class="invalid-tooltip">
+                                            Please provide a valid zip.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <button class="btn btn-primary" type="submit">Enter</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+
+
+
+
+</body>
+
+</html>

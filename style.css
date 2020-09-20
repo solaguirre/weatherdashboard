@@ -1,0 +1,22 @@
+.jumbotron {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    font-size: large;
+    text-align: center;
+    background-color: aquamarine;
+
+}
+
+.container-fluid{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: none;
+    color: black;
+}
+
+.container{
+    background-color: navajowhite;
+}
+
+.btn {
+    padding: 5px;
+}
