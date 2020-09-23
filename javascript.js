@@ -1,16 +1,102 @@
 // AS A traveler
 // I WANT to see the weather outlook for multiple cities
 // SO THAT I can plan a trip accordingly
-
-html
-
-
-
 // GIVEN a weather dashboard with form inputs
-
-
 // WHEN I search for a city
 // THEN I am presented with current and future conditions for that city and that city is added to the search history
+
+let APIKey = "93d3ded8310f4bcd0816861f0428d0f8";
+
+let lat = "32.253460";
+let lon = "-110.9747";
+
+
+// date
+let currentDate = moment().format("L");
+
+let forcastDays = ["1", "2", "3", "4", "5"]
+
+// console.log(currentDate);
+
+// let queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" +
+//     // units=imperial source https://openweathermap.org/current#data
+//     weatherLocation + "&appid=" + APIKey + "&units=imperial";
+function forecastSearch(lat, lon) {
+    let queryURL = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&exclude=part" + "&appid=" + APIKey + "&units=imperial";
+
+
+    // ajax call for city search
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    }).then(function (response) {
+
+        console.log(queryURL);
+        console.log(response);
+
+        $(".icons").attr("src", "http://openweathermap.org/img/wn/" + response.current.weather[0].icon + "@2x.png");
+
+        $(".card-subtitle").text(response.current.temp + " \u00B0 F");
+
+        $(".card-text").text("Humidity: " + response.current.humidity + " %");
+
+        $(".card-wind").text("Wind Speed: " + response.current.wind_speed + " mph");
+
+        // let uvButton = $("<button>");
+
+
+        $(".card-uv").text("UV Index: " + response.current.uvi);
+
+
+        // console.log(response.daily);
+        $("#forecast").empty();
+
+        for (let i = 1; i < response.daily.length; i++) {
+            let dailyForecast = response.daily[i];
+
+            let condition = dailyForecast.weather[0].main;
+            let currentTemperature = dailyForecast.temp.day;
+            console.log(dailyForecast);
+
+            let weatherCard = $("<div></div>").addClass("card col text-center");
+           
+            $("#forecast").append(weatherCard);
+
+            let weatherBody = $("<div>").addClass("card-body");
+            // weatherBody.attr();
+            weatherBody.append($("<p>Condition: " + condition + "</p>"));
+            weatherBody.append($("<p>Temperature: " + currentTemperature + "</p>"));
+            weatherBody.appendTo(weatherCard);
+
+
+
+        };
+
+    });
+}
+
+
+function cityForecast(cityName) {
+    let forecastURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&appid=" + APIKey;
+    $(".card-title").text(cityName + " " + " " + "(" + currentDate + ")");
+    $.ajax({
+        url: forecastURL,
+        method: 'GET'
+    }).then(function (forecast) {
+        console.log(forecast);
+
+        forecastSearch(forecast.city.coord.lat, forecast.city.coord.lon);
+
+    });
+}
+
+cityForecast("Tucson");
+
+$('#search-button').on('click', function () {
+    //save city name
+    cityForecast($("#city-input").val());
+})
+
 // WHEN I view current weather conditions for that city
 // THEN I am presented with the city name, the date, an icon representation of weather conditions, the temperature, the humidity, the wind speed, and the UV index
 // WHEN I view the UV index

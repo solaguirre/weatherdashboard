@@ -3,7 +3,7 @@
     font-weight: bold;
     font-size: large;
     text-align: center;
-    background-color: aquamarine;
+    background-color: grey;
 
 }
 
@@ -13,12 +13,18 @@
     color: black;
 }
 
-.container{
-    background-color: navajowhite;
+
+#main-container{
+    background-color:lightblue;
+
 }
 
 .btn {
     padding: 5px;
+}
+
+#main-card{
+    background-color: lightcyan;
 }
 
 .row{
@@ -27,6 +33,3 @@
     padding-right: 5px;
 }
 
-.city-btn{
-    
-}
