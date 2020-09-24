@@ -10,17 +10,17 @@ let APIKey = "93d3ded8310f4bcd0816861f0428d0f8";
 let lat = "32.253460";
 let lon = "-110.9747";
 
+let userSearch = "";
+
 
 // date
 let currentDate = moment().format("L");
 
 let forcastDays = ["1", "2", "3", "4", "5"]
 
-// console.log(currentDate);
 
-// let queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" +
-//     // units=imperial source https://openweathermap.org/current#data
-//     weatherLocation + "&appid=" + APIKey + "&units=imperial";
+// https://openweathermap.org/api/one-call-api source for "&units=imperial"
+
 function forecastSearch(lat, lon, forecast) {
     let queryURL = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&exclude=part" + "&appid=" + APIKey + "&units=imperial";
 
@@ -31,6 +31,11 @@ function forecastSearch(lat, lon, forecast) {
         method: "GET"
     }).then(function (response) {
 
+        console.log(response);
+
+        let currentCondition = response.current.weather[0].description;
+
+        $(".card-conditions").text("Conditions: " + currentCondition);
 
         $(".icons").attr("src", "http://openweathermap.org/img/wn/" + response.current.weather[0].icon + "@2x.png");
 
@@ -39,7 +44,7 @@ function forecastSearch(lat, lon, forecast) {
         $(".card-text").text("Humidity: " + response.current.humidity + " %");
 
         $(".card-wind").text("Wind Speed: " + response.current.wind_speed + " mph");
-// UV index color that indicates whether the conditions are favorable, moderate, or severe
+        // UV index color that indicates whether the conditions are favorable, moderate, or severe
         let uvButton = $("<button>").text(response.current.uvi);
 
         if (response.current.uvi < 3) {
@@ -66,16 +71,14 @@ function forecastSearch(lat, lon, forecast) {
 
             let condition = dailyForecast.weather[0].main;
             let currentTemperature = dailyForecast.temp.day;
-            console.log(dailyForecast);
+
 
             let currentHumidity = dailyForecast.humidity;
             let weatherIcons = $("<img>")
             weatherIcons.attr("src", "http://openweathermap.org/img/wn/" + response.current.weather[0].icon + "@2x.png");
+            // display date on forecast card
+            let forecastTime = new Date(forecast.list[i].dt_txt).toLocaleDateString();
 
-            let forecastTime = new Date (forecast.list[i].dt_txt).toLocaleDateString();
-            
-
-            console.log(forecastTime)
 
             let weatherCard = $("<div></div>").addClass("card col text-center");
 
@@ -85,8 +88,8 @@ function forecastSearch(lat, lon, forecast) {
             // weatherBody.attr();
             weatherBody.append(forecastTime);
 
-            weatherBody.append($("<p>Condition: " + condition + "</p>"));
-            weatherBody.append($("<p>Temperature: " + currentTemperature + "</p>"));
+            weatherBody.append($("<p>Conditions: " + condition + "</p>"));
+            weatherBody.append($("<p>Temperature: " + currentTemperature + " \u00B0 F" + "</p>"));
             weatherBody.append($("<p>Humidity: " + currentHumidity + " %</p>"));
             weatherBody.append(weatherIcons);
             weatherBody.appendTo(weatherCard);
@@ -104,8 +107,6 @@ function cityForecast(cityName) {
         url: forecastURL,
         method: 'GET'
     }).then(function (forecast) {
-        console.log("forecast", forecast);
-    
 
         forecastSearch(forecast.city.coord.lat, forecast.city.coord.lon, forecast);
 
@@ -114,9 +115,28 @@ function cityForecast(cityName) {
 
 cityForecast("Tucson");
 
-$('#search-button').on('click', function () {
+// search button 
+$('#search-button').on('click', function (e) {
+
+    
+
     //save city name
+    e.preventDefault();
+
     cityForecast($("#city-input").val());
+
+    let searchedCity = $("#city-input").val();
+
+    localStorage.setItem("cityentered", searchedCity);
+
+    // localStorage.setItem("userSearch", searchedCity);
+
+    let newButton = $("<button>").text(searchedCity);
+    
+    newButton.addClass("btn btn-info");
+
+    $("#buttons").append(newButton);
+
 })
 
 // WHEN I view current weather conditions for that city
