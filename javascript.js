@@ -21,7 +21,7 @@ let forcastDays = ["1", "2", "3", "4", "5"]
 // let queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" +
 //     // units=imperial source https://openweathermap.org/current#data
 //     weatherLocation + "&appid=" + APIKey + "&units=imperial";
-function forecastSearch(lat, lon) {
+function forecastSearch(lat, lon, forecast) {
     let queryURL = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&exclude=part" + "&appid=" + APIKey + "&units=imperial";
 
 
@@ -31,8 +31,6 @@ function forecastSearch(lat, lon) {
         method: "GET"
     }).then(function (response) {
 
-        console.log(queryURL);
-        console.log(response);
 
         $(".icons").attr("src", "http://openweathermap.org/img/wn/" + response.current.weather[0].icon + "@2x.png");
 
@@ -41,34 +39,57 @@ function forecastSearch(lat, lon) {
         $(".card-text").text("Humidity: " + response.current.humidity + " %");
 
         $(".card-wind").text("Wind Speed: " + response.current.wind_speed + " mph");
+// UV index color that indicates whether the conditions are favorable, moderate, or severe
+        let uvButton = $("<button>").text(response.current.uvi);
 
-        // let uvButton = $("<button>");
+        if (response.current.uvi < 3) {
+            uvButton.addClass("btn btn-success");
 
 
-        $(".card-uv").text("UV Index: " + response.current.uvi);
+        } else if (response.current.uvi < 7) {
+            uvButton.addClass("btn btn-warning");
 
+        } else {
+            uvButton.addClass("btn btn-danger");
+
+        }
+        // clears button and appneds new button
+        $("#uv-text").empty();
+
+        $("#uv-text").append(uvButton);
 
         // console.log(response.daily);
         $("#forecast").empty();
 
-        for (let i = 1; i < response.daily.length; i++) {
+        for (let i = 0; i < 5; i++) {
             let dailyForecast = response.daily[i];
 
             let condition = dailyForecast.weather[0].main;
             let currentTemperature = dailyForecast.temp.day;
             console.log(dailyForecast);
 
+            let currentHumidity = dailyForecast.humidity;
+            let weatherIcons = $("<img>")
+            weatherIcons.attr("src", "http://openweathermap.org/img/wn/" + response.current.weather[0].icon + "@2x.png");
+
+            let forecastTime = new Date (forecast.list[i].dt_txt).toLocaleDateString();
+            
+
+            console.log(forecastTime)
+
             let weatherCard = $("<div></div>").addClass("card col text-center");
-           
+
             $("#forecast").append(weatherCard);
 
             let weatherBody = $("<div>").addClass("card-body");
             // weatherBody.attr();
+            weatherBody.append(forecastTime);
+
             weatherBody.append($("<p>Condition: " + condition + "</p>"));
             weatherBody.append($("<p>Temperature: " + currentTemperature + "</p>"));
+            weatherBody.append($("<p>Humidity: " + currentHumidity + " %</p>"));
+            weatherBody.append(weatherIcons);
             weatherBody.appendTo(weatherCard);
-
-
 
         };
 
@@ -83,9 +104,10 @@ function cityForecast(cityName) {
         url: forecastURL,
         method: 'GET'
     }).then(function (forecast) {
-        console.log(forecast);
+        console.log("forecast", forecast);
+    
 
-        forecastSearch(forecast.city.coord.lat, forecast.city.coord.lon);
+        forecastSearch(forecast.city.coord.lat, forecast.city.coord.lon, forecast);
 
     });
 }
