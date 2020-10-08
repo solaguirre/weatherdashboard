@@ -27,7 +27,7 @@ The purpose of this assignment was to retrieve data from a weather  application'
 * CSS
 
 ## API's Used
-* [OpenWeather:](https://openweathermap.org/) to obtain location coordinates
+* [OpenWeather:](https://openweathermap.org/) to obtain current weather information on cities that were searched by user. 
 
 ## User Story
 
@@ -36,7 +36,6 @@ AS A traveler
 I WANT to see the weather outlook for multiple cities
 SO THAT I can plan a trip accordingly
 ```
-
 
 ### This is what the application looks like:
 
