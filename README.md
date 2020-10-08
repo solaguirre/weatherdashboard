@@ -1,5 +1,19 @@
-# 05 Third-Party APIs: Work Day Scheduler
 # Weather Dashboard
+<p align="center">
+<i class="fas fa-globe-americas"></i>
+
+  <h3 align="center"><strong>Weather Dashboard App</strong></h3>
+
+  <p align="center">
+    Check your the current temperature anywhere and save your results. 
+    <br />
+    <br />
+    <a href="https://github.com/solaguirre/weatherdashboard/"><strong>View Demo »</strong></a>
+    <br />
+    <br />
+   
+  </p>
+</p>
 
 Developers are often tasked with retrieving data from another application's API and using it in the context of their own. Third-party APIs allow developers to access their data and functionality by making requests with specific parameters to a URL. Your challenge is to build a weather dashboard that will run in the browser and feature dynamically updated HTML and CSS.
 
@@ -21,3 +35,11 @@ SO THAT I can plan a trip accordingly
 ### When a user enters an input in the search area, a new button is created to display their search history. Here is what that looks like: 
 
 [![Screen-Shot-2020-09-23-at-11-40-40-PM.png](https://i.postimg.cc/28WT5Mtt/Screen-Shot-2020-09-23-at-11-40-40-PM.png)](https://postimg.cc/VdYXGGm9)
+
+
+Live link to deployed app
+List of technologies used
+1-2 sentences explaining what the app is
+2-3 Screenshots / gifs of the app
+License (usually MIT)
+Contact information for you and any collaborators
