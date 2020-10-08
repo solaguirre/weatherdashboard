@@ -47,6 +47,7 @@ SO THAT I can plan a trip accordingly
 
 ### Search history is saved and stored in buttons
 [![Screen-Shot-2020-10-07-at-8-51-11-PM.png](https://i.postimg.cc/3JvgygQK/Screen-Shot-2020-10-07-at-8-51-11-PM.png)](https://postimg.cc/SJmX3YK5)
+
 ## Project Contributor
 
 * Marisol Aguirre
