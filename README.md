@@ -19,6 +19,15 @@ Developers are often tasked with retrieving data from another application's API 
 
 The purpose of this assignment was to retrieve data from a weather  application's API and use it in our own weather dashboard.
 
+## Created With
+
+* HTML
+* JavaScript
+* jQuery
+* CSS
+
+## API's Used
+* [OpenWeather:](https://openweathermap.org/) to obtain location coordinates
 
 ## User Story
 
@@ -27,6 +36,7 @@ AS A traveler
 I WANT to see the weather outlook for multiple cities
 SO THAT I can plan a trip accordingly
 ```
+
 
 ### This is what the application looks like:
 
@@ -37,9 +47,4 @@ SO THAT I can plan a trip accordingly
 [![Screen-Shot-2020-09-23-at-11-40-40-PM.png](https://i.postimg.cc/28WT5Mtt/Screen-Shot-2020-09-23-at-11-40-40-PM.png)](https://postimg.cc/VdYXGGm9)
 
 
-Live link to deployed app
-List of technologies used
-1-2 sentences explaining what the app is
-2-3 Screenshots / gifs of the app
-License (usually MIT)
-Contact information for you and any collaborators
+
