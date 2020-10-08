@@ -8,7 +8,7 @@
     Check your the current temperature anywhere and save your results. 
     <br />
     <br />
-    <a href="https://github.com/solaguirre/weatherdashboard/"><strong>View Demo »</strong></a>
+    <a href="https://github.com/solaguirre/weatherdashboard/"><strong>View Web Application »</strong></a>
     <br />
     <br />
    
@@ -48,13 +48,14 @@ SO THAT I can plan a trip accordingly
 ### Search history is saved and stored in buttons
 [![Screen-Shot-2020-10-07-at-8-51-11-PM.png](https://i.postimg.cc/3JvgygQK/Screen-Shot-2020-10-07-at-8-51-11-PM.png)](https://postimg.cc/SJmX3YK5)
 
-## Project Contributor
+## Contact Me
+### Marisol Aguirre
 
-* Marisol Aguirre
-Contact: soulaguirre@gmail.com
-GitHub: https://github.com/solaguirre
-
-Project Link: [https://solaguirre.github.io/weatherdashboard/](https://solaguirre.github.io/weatherdashboard/)
+* [Junior Full Stack Developer - UA Coding Bootcamp](https://www.linkedin.com/in/marisol-aguirre-93688296/)
+* [GitHub Profile](https://github.com/solaguirre)
+* [E-mail](soulaguirre@gmail.com)
+* [Professional Resume](assets/professionalresume.pdf)
+* [Weather Dashboard Project Link](https://solaguirre.github.io/weatherdashboard/)
 
 
 
