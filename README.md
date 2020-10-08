@@ -46,5 +46,13 @@ SO THAT I can plan a trip accordingly
 
 [![Screen-Shot-2020-09-23-at-11-40-40-PM.png](https://i.postimg.cc/28WT5Mtt/Screen-Shot-2020-09-23-at-11-40-40-PM.png)](https://postimg.cc/VdYXGGm9)
 
+## Project Contributor
+
+* Marisol Aguirre
+Contact: soulaguirre@gmail.com
+GitHub: https://github.com/solaguirre
+
+Project Link: [https://solaguirre.github.io/weatherdashboard/](https://solaguirre.github.io/weatherdashboard/)
+
 
 
